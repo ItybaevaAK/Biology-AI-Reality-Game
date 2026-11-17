@@ -24,8 +24,17 @@
 <footer>Образовательная игра • Биологические факты проверены по общепринятым школьным сведениям. Иллюстрация носит художественный характер. Не вводите конфиденциальные данные.</footer></main>
 <script type="module">
 // OPTIONAL CLOUD SETUP: replace null with your Firebase project config and configure Authentication + secure database rules.
-const FIREBASE_CONFIG=null; // Вставьте объект firebaseConfig из Firebase Console
-const TEACHER_UID="REPLACE_WITH_TEACHER_UID";
+const FIREBASE_CONFIG= {
+  apiKey: "AIzaSyDMwGTJoZojWlqiT1T-zK75ILnETq4-yoQ",
+  authDomain: "biology-ai-game-2026.firebaseapp.com",
+  databaseURL: "https://biology-ai-game-2026-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "biology-ai-game-2026",
+  storageBucket: "biology-ai-game-2026.firebasestorage.app",
+  messagingSenderId: "319202140832",
+  appId: "1:319202140832:web:184445be75bb2b12575fc5",
+  measurementId: "G-VD91JGFRK7"
+}; // Вставьте объект firebaseConfig из Firebase Console
+const TEACHER_UID="6Qh4YXO7iuZLLgQmHDbHGvbCgzf2";
 let db=null, cloudReady=false, auth=null, currentUid=null, teacherAuthenticated=false;
 if(FIREBASE_CONFIG){try{
  const [{initializeApp},{getDatabase,ref,onValue,set,get},{getAuth,signInAnonymously,signInWithEmailAndPassword,signOut,onAuthStateChanged}]=await Promise.all([
