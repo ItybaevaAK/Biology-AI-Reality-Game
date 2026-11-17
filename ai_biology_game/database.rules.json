@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "biology-game": {
+      "results": {
+        ".read": "auth != null && auth.uid === 'REPLACE_WITH_TEACHER_UID'",
+        "$uid": {
+          ".write": "auth != null && auth.uid === $uid && !data.exists()",
+          ".validate": "newData.hasChildren(['id','name','klass','team','score','answers','completed','submittedAt']) && newData.child('id').val() === auth.uid && newData.child('completed').val() === true && newData.child('name').isString() && newData.child('name').val().length <= 70 && newData.child('klass').isString() && newData.child('klass').val().length <= 12 && newData.child('score').isNumber() && newData.child('score').val() >= 0 && newData.child('score').val() <= 60"
+        }
+      }
+    }
+  }
+}

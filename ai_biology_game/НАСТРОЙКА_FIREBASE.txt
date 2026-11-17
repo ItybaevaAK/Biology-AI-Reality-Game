@@ -1,0 +1,10 @@
+1. Откройте https://console.firebase.google.com/ и создайте проект.
+2. Project settings → Your apps → Web app → зарегистрируйте приложение и скопируйте firebaseConfig.
+3. Build → Authentication → Sign-in method: включите Anonymous и Email/Password.
+4. Authentication → Users: добавьте пользователя-учителя с email и паролем. Скопируйте UID учителя.
+5. Build → Realtime Database: создайте базу. Скопируйте databaseURL из настроек Firebase.
+6. Realtime Database → Rules: вставьте содержимое database.rules.json, заменив REPLACE_WITH_TEACHER_UID на UID учителя; нажмите Publish.
+7. В index.html замените FIREBASE_CONFIG=null на объект firebaseConfig (включая databaseURL), а TEACHER_UID — на UID учителя.
+8. Разместите всю папку на GitHub Pages. Для проверки откройте сайт на двух устройствах, завершите игру и войдите в панель учителя.
+ВАЖНО: не публикуйте пароль учителя в HTML. Не включайте общедоступные правила чтения/записи.
+ОГРАНИЧЕНИЕ: анонимный пользователь может начать заново после очистки данных браузера; персональные одноразовые коды и серверная проверка ответов нужны для защиты от повторных попыток и подмены баллов.
